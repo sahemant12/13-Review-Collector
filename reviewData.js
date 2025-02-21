@@ -1,3 +1,9 @@
+//1. Make it responsive
+//2. add rating
+//3. add sort
+
+
+
 const reviewData = [
     {
         name:"Pratik Prakhar",
@@ -9,11 +15,11 @@ const reviewData = [
         name:"Piyush Nayak",
         review:"The UI is decent, but the loading speed needs improvement. Sometimes, pages take too long to load.",
         rating:"4⭐",
-        time:"2/19/2025, 04:50:02 AM"
+        time:"2/19/2025, 4:50:02 AM"
     },
     {
         name:"Haresh Gupta",
-        review:"Overall, a solid app! Adding sort review by rating would make it even better",
+        review:"Overall, a solid app! Adding sort review by rating would make it even better.",
         rating:"4.5⭐",
         time:"2/19/2025, 11:56:20 PM"
     },
