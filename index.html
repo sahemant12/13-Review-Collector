@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="responsive.css">
     <link rel="icon" type="image/png" href="./image/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Review-Collector</title>
 </head>
 <body>
@@ -17,25 +18,17 @@
                 <textarea name="userreview" id="review" cols="50" rows="12" placeholder="write your review about this app."></textarea>
             </div>
             
-            <div class="review-star">
-                <h2 class="text-3xl font-bold underline">Rate Review-Collector</h2>
-                <div class="rating rating-lg rating-half">
-                    <input type="radio" name="rating-10" class="rating-hidden" />
-                    <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-1 bg-green-500" />
-                    <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-2 bg-green-500" />
-                    <input
-                      type="radio"
-                      name="rating-10"
-                      class="mask mask-star-2 mask-half-1 bg-green-500"
-                      checked="checked" />
-                    <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-2 bg-green-500" />
-                    <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-1 bg-green-500" />
-                    <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-2 bg-green-500" />
-                    <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-1 bg-green-500" />
-                    <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-2 bg-green-500" />
-                    <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-1 bg-green-500" />
-                    <input type="radio" name="rating-10" class="mask mask-star-2 mask-half-2 bg-green-500" />
-                  </div>
+            <div id="review-star">
+                <h3 class="text-3xl font-bold underline">Rate Review-Collector</h3>
+                <li id="rating-icon">
+                    <!-- <i class="fa-solid fa-star fa-xl star-icon" data-id="01" style="color: #D1D106;"></i> -->
+                    <i class="fa-solid fa-star fa-xl star-icon" data-id="01" style="color: #acaaaa;"></i>
+                    <i class="fa-solid fa-star fa-xl star-icon" data-id="02" style="color: #acaaaa;"></i>
+                    <i class="fa-solid fa-star fa-xl star-icon" data-id="03" style="color: #acaaaa;"></i>
+                    <i class="fa-solid fa-star fa-xl star-icon" data-id="04" style="color: #acaaaa;"></i>
+                    <i class="fa-solid fa-star fa-xl star-icon" data-id="05" style="color: #acaaaa;"></i>
+                </li>
+                
             </div>
 
             <div class="btn">

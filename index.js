@@ -4,6 +4,7 @@ const userName = document.getElementById("name");
 const userReview = document.getElementById("review");
 const submitBtn = document.getElementById("submit-btn");
 const reviewList = document.getElementById("review-lists");
+const starIconList = document.getElementById("rating-icon");
 
 reviewData.forEach((data)=>renderReview(data));
 
@@ -61,6 +62,25 @@ function renderReview(data){
             fullText.classList.add("hidden");
             shortText.classList.remove("hidden");
     });
-
-
 }
+
+// document.getElementById("star-icon").addEventListener("click",()=>{
+//     document.getElementById("star-icon").classList.add("rate");
+// })
+// const starList = starIconList.querySelectorAll(".star-icon");
+// console.log("hello", starList);
+// const ratingIcon = document.getElementById("rating-icon");
+
+//solve this: prbm with className and queryselector. check what className and query selector return.
+
+starIconList.addEventListener("click",(e)=>{
+    const ratingStar = +e.target.dataset.id;
+    const starIcons = document.getElementsByClassName("star-icon");
+    console.log(starIcons.length);
+    for(let i=0; i<ratingStar; i++){
+        console.log(starIcons[i]);
+        
+    }
+    e.target.classList.add("rate");
+})
+

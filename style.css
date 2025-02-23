@@ -9,6 +9,9 @@ body{
     color:#fff;
     font-family: Arial, Helvetica, sans-serif;
 }
+li{
+    list-style-type: none;
+}
 .container{
     display: flex;
     justify-content: space-around;
@@ -71,7 +74,6 @@ input::placeholder, #review::placeholder {
 
 }
 .review-lists li{
-    list-style-type: none;
     display: flex;
     flex-direction: column;
     row-gap: 8px;
@@ -133,11 +135,18 @@ input::placeholder, #review::placeholder {
 .hidden {
     display: none;
 }
-.review-star{
+#review-star{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    /* column-gap: 10px; */
-    /* border:1px solid red; */
     margin-bottom: 10px;
+}
+/* #rating-icon{
+
+} */
+#star-icon{
+    cursor: pointer;   
+}
+.rate{
+    color: #D1D106 !important;
 }
