@@ -6,10 +6,19 @@ const submitBtn = document.getElementById("submit-btn");
 const reviewList = document.getElementById("review-lists");
 const starIconList = document.getElementById("rating-icon");
 let ratingNum = 0;
+
+//rendering reviews
 reviewData.forEach((data)=>renderReview(data));
 
-submitBtn.addEventListener("click",storeReview);
-function storeReview(){
+//submit review
+submitBtn.addEventListener("click",submitReview);
+
+//rate the app
+starIconList.addEventListener("click",giveRating);
+
+
+
+function submitReview(){
     let name = userName.value.trim();
     let review = userReview.value.trim();
     
@@ -33,6 +42,7 @@ function storeReview(){
     reviewData.push(user);
     renderReview(user);
 }
+
 
 function renderReview(data){   
     const {name, review, rating, time} = data;  
@@ -79,17 +89,18 @@ function renderReview(data){
     });
 }
 
-starIconList.addEventListener("click",(e)=>{
+
+function giveRating(e){
     //1st remove all the previous rating
     removeStarRating();
     
     //add rating
-    // const ratingStar = +e.target.dataset.id;
     ratingNum = +e.target.dataset.id;
     for(let i=0; i<ratingNum; i++){
         document.getElementById(`star-${i+1}`).classList.add("rate");      
     }
-})
+}
+
 function removeStarRating(){
     const allStarIcon = document.getElementsByClassName("star-icon");    
     for(let star of allStarIcon){
