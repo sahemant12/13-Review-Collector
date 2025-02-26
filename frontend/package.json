@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "axios": "^1.8.0"
+    "axios": "^1.8.0",
+    "review-collector": "file:.."
   }
 }

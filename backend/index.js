@@ -1,6 +1,7 @@
 require('dotenv').config();
 const reviewRouter = require('./routes/review.js');
 const cors = require('cors');
+
 //connect DB
 const mongoose = require('mongoose')
 main().catch(err => console.log(err));
@@ -10,18 +11,19 @@ async function main() {
   console.log("DataBase Connected")
 }
 
-
 const express = require('express');
-const server = express();
+const app = express();
 
-server.use(cors({
-  origin: ["https://13-review-collector-frontend.vercel.app"],
-  methods: ["POST", "GET"],
-}));
-server.use(express.json());
-server.use('/',reviewRouter.router);
+// app.use(cors({
+//   origin: ["http://127.0.0.1:5500/frontend/index.html"],
+//   methods: ["POST", "GET"],
+//   credentials:true,
+// }));
+app.use(express.json());
+app.use(cors());
+app.use('/',reviewRouter.router); 
 
 //connect to the server
-server.listen(process.env.PORT, ()=>{
-    console.log("server is listening")
+app.listen(process.env.PORT, ()=>{
+    console.log("app is listening")
 })
