@@ -10,18 +10,17 @@ let ratingNum = 0;
 //get review
 const getReviews = async () => {
     try{
-        const res = await axios.get('http://localhost:8080/reviews');
+        const res = await axios.get('/reviews');
         return res.data;
     }catch(error){
         console.log(error);
         return [];
     }
   }
-  
 
 //add review
 const addReview = async(review)=>{
-    const res = await axios.post('http://localhost:8080/review',review);
+    const res = await axios.post('/review',review);
     console.log(res.data);
 }
 const reviewDataDB = await getReviews();
