@@ -10,7 +10,7 @@ let ratingNum = 0;
 //get review
 const getReviews = async () => {
     try{
-        const res = await axios.get('https://review-collector-13.vercel.app');
+        const res = await axios.get('https://review-collector-13.vercel.app/reviews');
         console.log(res.data);      
         return res.data;
     }catch(error){
