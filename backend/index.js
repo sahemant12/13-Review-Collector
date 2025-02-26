@@ -15,7 +15,7 @@ const express = require('express');
 const server = express();
 
 server.use(cors({
-  origin: ["https://13-review-collector-frontend.vercel.app/"],
+  origin: ["https://13-review-collector-frontend.vercel.app"],
   methods: ["POST", "GET"],
 }));
 server.use(express.json());
