@@ -7,8 +7,29 @@ const reviewList = document.getElementById("review-lists");
 const starIconList = document.getElementById("rating-icon");
 let ratingNum = 0;
 
+//get review
+const getReviews = async () => {
+    try{
+        const res = await axios.get('/reviews');
+        return res.data;
+    }catch(error){
+        console.log(error);
+        return [];
+    }
+  }
+  
+
+//add review
+const addReview = async(review)=>{
+    const res = await axios.post('/review',review);
+    console.log(res.data);
+}
+const reviewDataDB = await getReviews();
+
+
 //rendering reviews
-reviewData.forEach((data)=>renderReview(data));
+// reviewData.forEach((data)=>renderReview(data));
+reviewDataDB.forEach((data)=>renderReview(data)); //getReviews from database
 
 //submit review
 submitBtn.addEventListener("click",submitReview);
@@ -39,7 +60,8 @@ function submitReview(){
     userReview.value = "";
     ratingNum=0;
     removeStarRating();
-    reviewData.push(user);
+    // reviewData.push(user);
+    addReview(user);
     renderReview(user);
 }
 
