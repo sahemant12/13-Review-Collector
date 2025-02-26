@@ -20,6 +20,14 @@ app.use(cors({
 }));
 app.use(express.json());
 // app.use(cors());
+app.use((req, res, next) => {
+  res.setHeader(
+    "Content-Security-Policy",
+    "default-src 'self' https://vercel.live; script-src 'self' https://vercel.live; style-src 'self';"
+  );
+  next();
+});
+
 app.use('/',reviewRouter.router); 
 
 //connect to the server
