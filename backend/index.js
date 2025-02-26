@@ -1,6 +1,6 @@
 require('dotenv').config();
 const reviewRouter = require('./routes/review.js');
-
+const cors = require('cors');
 //connect DB
 const mongoose = require('mongoose')
 main().catch(err => console.log(err));
@@ -13,6 +13,7 @@ async function main() {
 
 const express = require('express');
 const server = express();
+server.use(cors());
 server.use(express.json());
 server.use('/',reviewRouter.router);
 
