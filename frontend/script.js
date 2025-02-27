@@ -10,7 +10,7 @@ let ratingNum = 0;
 //get review
 const getReviews = async () => {
     try{
-        const res = await axios.get('http://localhost:8080/reviews');
+        const res = await axios.get('https://review-collector-13.vercel.app/reviews');
         console.log(res.data);      
         return res.data;
     }catch(error){
@@ -22,7 +22,7 @@ const getReviews = async () => {
 
 //add review
 const addReview = async(review)=>{
-    const res = await axios.post('http://localhost:8080/review',review);
+    const res = await axios.post('https://review-collector-13.vercel.app/review',review);
     console.log(res.data);
 }
 const reviewDataDB = await getReviews();

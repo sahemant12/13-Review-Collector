@@ -14,13 +14,20 @@ async function main() {
 const express = require('express');
 const app = express();
 
-// app.use(cors({
-//   origin: ["http://127.0.0.1:5500/frontend/index.html"],
-//   methods: ["POST", "GET"],
-//   credentials:true,
-// }));
+app.use(cors({
+  origin: ["https://13-review-collector-frontend.vercel.app"],
+  methods: ["POST", "GET"],
+}));
 app.use(express.json());
-app.use(cors());
+// app.use(cors());
+app.use((req, res, next) => {
+  res.setHeader(
+    "Content-Security-Policy",
+    "default-src 'self' https://vercel.live; script-src 'self' https://vercel.live; style-src 'self';"
+  );
+  next();
+});
+
 app.use('/',reviewRouter.router); 
 
 //connect to the server
