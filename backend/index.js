@@ -14,11 +14,11 @@ async function main() {
 const express = require('express');
 const app = express();
 
-app.use(cors({
-  origin: ["https://13-review-collector-frontend.vercel.app"],
-}));
+// app.use(cors({
+//   origin: ["https://13-review-collector-frontend.vercel.app"],
+// }));
+app.use(cors());
 app.use(express.json());
-// app.use(cors());
 
 app.use('/',reviewRouter.router); 
 
