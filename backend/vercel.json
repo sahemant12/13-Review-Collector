@@ -12,3 +12,37 @@
       }
     ]
   }
+  {
+    "builds": [
+      {
+        "src": "index.js",
+        "use": "@vercel/node"
+      },
+      // {
+      //   "src": "dist/**",
+      //   "use": "@vercel/static"
+      // }
+    ],
+    "routes": [
+      {
+        "src": "/reviews",
+        "dest": "index.js"
+      },
+      {
+        "src": "/reviews",
+        "dest": "index.js"
+      },
+      // {
+      //   "src": "/add",
+      //   "dest": "dist/index.html"
+      // },
+      // {
+      //   "src": "/",
+      //   "dest": "dist/index.html"
+      // },
+      // {
+      //   "src": "/(.+)",
+      //   "dest": "dist/$1"
+      // }
+    ]
+  }
