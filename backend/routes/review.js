@@ -5,7 +5,7 @@ const reviewController = require('../controller/review.js');
 
 router
 .get('/reviews', reviewController.getAllReview)
-.post('/review', reviewController.postReview);
+.post('/review', reviewController.postReview)
 
 
 exports.router = router;
